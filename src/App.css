@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+/* Dashboard */
+.dashboard .card{
+  height: 100px !important; 
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dashboard .d-flex{
+  justify-content: space-between !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dashboard table tr th{
+  border-bottom: thin solid black;
+  padding: 6px !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.dashboard table tr td{
+  padding: 6px !important;
+  border-bottom: thin solid black;
+  font-size: 13px;
+}
+.dashboard input{
+  height: 35px;
+  border: thin solid grey;
+  border-radius: 6px ;
+}
+.dashboard .header button {
+  font-size: 13px;
+  background-color: black;
   color: white;
+  border: thin solid black;
+}
+.dashboard .header button:first-child{
+  background-color: white;
+  color: black;
+}
+.dashboard p{
+  font-size: 13px !important;
+}
+/* Dashboard */
+.dashboard{
+  width: 90%;
+}
+.dashboard .header h5{
+  color: rgb(10, 10, 148);
+}
+.dashboard .percentage{
+  border: thin solid rgb(12, 12, 99);
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: rgb(12, 12, 99);
+  font-weight: 600;
+}
+.dashboard tbody button{
+  border:  thin solid rgb(8, 8, 73) !important;
+  background-color: white;
+  color: rgb(8, 8, 63);
+
+}
+/* Result */
+.result{
+  font-size: 13px;
+}
+.result .header{
+  justify-content: space-between !important;
 }
 
-.App-link {
-  color: #61dafb;
+.result table tr td{
+  padding: 6px !important;
+  border-bottom: thin solid black;
+  font-size: 13px;
+}
+.result table tr th{
+  background-color: rgba(185, 185, 185, 0.247);
+  padding: 6px !important;
+  border-bottom: thin solid rgba(185, 185, 185, 0.247);
+  font-size: 13px;
+  color: blue;
+}
+.result .info{
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.result .info span{
+  color: rgb(108, 175, 153);
+  font-weight: 600;
+  font-size: 14px;
+}
+.result .info p{
+  font-size: 14px;
+}
+.result .info .col-lg-6, .course{
+  /* border: thin solid black; */
+  box-shadow: 1px 1px 5px gainsboro;
+  text-transform: capitalize;
+}
+.result .result-div{
+  box-shadow: 1px 1px 5px gainsboro;
+}
+.result .info .image img{
+  width: 120px;
+  height: 150px;
+}
+.result .header .title{
+  /* color: blue; */
+  font-size: 14px;
+}
+.result td{
+  text-transform: capitalize;
+}
+.result .code{
+  font-weight: 600;
+  text-transform: uppercase !important;
+}
+.class
+
+/* login */
+.login .form{
+  box-shadow: 1px 1px 5px gainsboro;
+  margin-top: 150px !important;
+}
+.login button{
+  font-size: 13px;
+  border-radius: 20px;
+  background-color: rgb(38, 38, 88);
+  color: white;
+  border: none;
+}
+.login .form{
+  box-shadow: 1px 1px 5px gainsboro;
+  margin-top: 120px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Admin Login */
+.admin .form{
+  box-shadow: 1px 1px 5px gainsboro;
+  margin-top: 120px !important;
 }
+.admin button{
+  font-size: 13px;
+  border-radius: 20px;
+  background-color: rgb(38, 38, 88);
+  color: white;
+  border: none;
+}
+
+/* Add students */
+.addStudent {
+  width: 90%;
+  margin: auto !important;
+}
+.addStudent input{
+  border: thin solid rgba(128, 128, 128, 0.267) ;
+  border-radius: 10px;
+}
+.addStudent form button{
+  border-radius: 20px;
+}
+.addStudent .courseForm{
+  /* margin-top: ; */
+  align-items: center;
+}
+.addStudent .courseForm button{
+  margin-top: 25px;
+}
+/* .addStudent form{
+  margin: auto;
+  justify-content: center;
+} */
