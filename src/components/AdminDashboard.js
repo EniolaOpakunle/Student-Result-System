@@ -16,7 +16,8 @@ const AdminDashboard = () => {
         navigate('/add-student')
     }
     const handleDelete = (e) =>{
-
+      let updatedStudents = students.filter((val, index) => e != index)
+      setStudents(updatedStudents)
     }
   return (
     <>
