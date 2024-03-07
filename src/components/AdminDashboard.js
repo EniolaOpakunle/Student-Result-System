@@ -15,10 +15,18 @@ const AdminDashboard = () => {
     const handleAdd = () =>{
         navigate('/add-student')
     }
+    
     const handleDelete = (e) =>{
       let updatedStudents = students.filter((val, index) => e != index)
       setStudents(updatedStudents)
+      localStorage.setItem('students', JSON.stringify(updatedStudents))
     }
+    const handleEdit = (e) =>{
+      let found = students[e]
+      console.log(found)
+      navigate('/add-student', {state: found})
+    }
+
   return (
     <>
     <div className='container-fluid dashboard p-3'>
@@ -82,7 +90,7 @@ const AdminDashboard = () => {
                   <td>{student.name}</td>
                   <td>{student.gender}</td>
                   <td>{student.dob}</td>
-                  <td><button className=' button rounded px-3'>Edit</button></td>
+                  <td><button className=' button rounded px-3' onClick={() => handleEdit(index)}>Edit</button></td>
                   <td><button className=' button rounded px-3' onClick={() => handleDelete(index)}>delete</button></td>
                 </tr>
               ))}

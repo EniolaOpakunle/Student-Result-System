@@ -1,60 +1,8 @@
-// import React from 'react'
-// import { useState } from 'react'
-
-// function AddStudent() {
-//     const [name, setName] = useState('');
-//     const [matric, setMatric] = useState('');
-//     const [level, setlevel] = useState('')
-
-//     const handleSubmit = (e) =>{
-//         e.preventDefault();
-//         const newStudent = {
-//             name,
-//             matric
-//         }
-//         const storedStudents = JSON.parse(localStorage.getItem('students')) || [];
-//         storedStudents.push(newStudent);
-//         localStorage.setItem('students', JSON.stringify(storedStudents)); 
-//         console.log('done')
-//     }
-//   return (
-//     <>
-//     <form onSubmit={handleSubmit}>
-//         <label htmlFor="">name</label>
-//         <input
-//             type="text"
-//             className='form-control w-75'
-//             placeholder="Name"
-//             value={name}
-//             onChange={(e) => setName(e.target.value)}
-//         />
-//         <label htmlFor="">Matric-no</label>
-//         <input
-//             type="text"
-//             className='form-control w-75'
-//             placeholder="Matric-No"
-//             value={matric}
-//             onChange={(e) => setMatric(e.target.value)}
-//         />
-//         <label htmlFor="">Level</label>
-//         <input 
-//         type="text"
-//         className='form-control'
-//         placeholder='Level'
-//         value={level}
-//         onChange={(e) => setlevel(e.target.value)} 
-//         />
-//         <button type='submit'>Add</button>
-//     </form>
-//     </>
-//   )
-// }
-
-// export default AddStudent
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 const AddStudent = () => {
+  const [editObj, seteditObj] = useState({})
   const [name, setName] = useState('');
   const [matric, setMatric] = useState('');
   const [gender, setgender] = useState('');
@@ -62,10 +10,25 @@ const AddStudent = () => {
   const [department, setdepartment] = useState('')
   const [faculty, setfaculty] = useState('')
   const [grade, setgrade] = useState('')
-//   const [code, setcode] = useState('')
   const [courses, setCourses] = useState([]);
   const [message, setmessage] = useState('')
+  const [editMode, seteditMode] = useState(false)
   const navigate = useNavigate()
+  
+  // const {state} = useLocation();
+  
+
+  useEffect(()=>{
+  console.log(object)
+    seteditObj(object)
+    if(editObj.matric != ''){
+      seteditMode(true)
+    }
+    else{
+      setName(editObj.matric);
+    }
+  }, [])
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
