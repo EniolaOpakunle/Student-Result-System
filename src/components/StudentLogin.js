@@ -39,7 +39,7 @@ function StudentLogin() {
             <button type='submit' className='mt-3 px-4 py-1'>Login</button>
           </form>  
           <div className='mt-3'>
-            <h6>{message}</h6>
+            <h6 className='text-danger'>{message}</h6>
           </div>
           <Routes>
             <Route path='/result' element= {<Result/>}/>

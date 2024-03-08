@@ -49,7 +49,14 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className="d-flex mt-5">
-          <div className="card col-lg-3 p-3">
+          <div className="card col-sm-10 col-lg-3 p-3">
+            <p>Total students</p>
+            <div className="d-flex">
+              <h3>{students.length}</h3>
+              <p className="percentage">100%</p>
+            </div>
+          </div>
+          {/* <div className="card col-lg-3 p-3">
             <p>Total students</p>
             <div className="d-flex">
               <h3>{students.length}</h3>
@@ -62,14 +69,7 @@ const AdminDashboard = () => {
               <h3>{students.length}</h3>
               <p className="percentage">100%</p>
             </div>
-          </div>
-          <div className="card col-lg-3 p-3">
-            <p>Total students</p>
-            <div className="d-flex">
-              <h3>{students.length}</h3>
-              <p className="percentage">100%</p>
-            </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-5">
           <div className="d-flex">

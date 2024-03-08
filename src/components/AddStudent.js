@@ -58,6 +58,8 @@ const AddStudent = ({object}) => {
       return 'D';
     } else if (score >= 50 && score <= 59) {
       return 'E';
+    } else if(score == ''){
+      return 'AR';
     } else {
       return 'F';
     }
@@ -156,6 +158,7 @@ const AddStudent = ({object}) => {
                     />
                     Female
                     </p>
+                    
                 </form>
             </div>
             {/* Error message */}
@@ -165,7 +168,7 @@ const AddStudent = ({object}) => {
         {/* Add course */}
         <div className='mt-5'>
           {courses.map((course, index) => (
-            <div key={index} className='d-flex courseForm'>
+            <form key={index} className='d-flex courseForm'>
                 <div className='col-lg-3'>
                     <label htmlFor="" className='form-label'>Course Title</label>
                     <input
@@ -174,6 +177,7 @@ const AddStudent = ({object}) => {
                     placeholder="Course Name"
                     value={course.name}
                     onChange={(e) => handleCourseChange(index, 'name', e.target.value)}
+                    required
                     />
                 </div>
                 <div className='col-lg-2'>
@@ -184,6 +188,7 @@ const AddStudent = ({object}) => {
                     placeholder='Course Code'
                     value={course.code}
                     onChange={(e) => handleCourseChange(index, 'code', e.target.value)}
+                    required
                     />
                 </div>
                 <div className='col-lg-2'>
@@ -212,7 +217,7 @@ const AddStudent = ({object}) => {
                         Remove Course
                     </button>
                 </div>
-            </div>
+            </form>
           ))}
         </div>
         <div className='row mt-3 justify-content-center'>

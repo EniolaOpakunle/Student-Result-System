@@ -72,6 +72,8 @@ const EditStudent = () => {
       return "D";
     } else if (score >= 50 && score <= 59) {
       return "E";
+    } else if(score == ''){
+      return 'AR';
     } else {
       return "F";
     }
