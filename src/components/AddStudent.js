@@ -15,20 +15,6 @@ const AddStudent = () => {
   const [editMode, seteditMode] = useState(false)
   const navigate = useNavigate()
   
-  // const {state} = useLocation();
-  
-
-  useEffect(()=>{
-  console.log(object)
-    seteditObj(object)
-    if(editObj.matric != ''){
-      seteditMode(true)
-    }
-    else{
-      setName(editObj.matric);
-    }
-  }, [])
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
