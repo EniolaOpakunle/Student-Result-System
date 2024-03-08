@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-const AddStudent = () => {
+const AddStudent = ({object}) => {
   const [editObj, seteditObj] = useState({})
   const [name, setName] = useState('');
   const [matric, setMatric] = useState('');
