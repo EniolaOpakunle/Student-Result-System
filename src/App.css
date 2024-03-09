@@ -165,8 +165,13 @@
 
 @media (max-width: 430px){
   /* Dashboard */
+  .dashboard{
+    width: 100% !important;
+  }
   .dashboard .card{
     height: 100px !important; 
+    width: 90% !important;
+    margin: auto;
   }
   .dashboard .d-flex{
     justify-content: space-between !important;
@@ -211,6 +216,9 @@
     border-radius: 20px;
     color: rgb(12, 12, 99);
     font-weight: 600;
+  }
+  .dashboard .small{
+    display: none !important;
   }
   .dashboard tbody button{
     border:  thin solid rgb(8, 8, 73) !important;
@@ -258,6 +266,11 @@
   .result .result-div{
     box-shadow: 1px 1px 5px gainsboro;
   }
+  .result .image{
+    margin: 0 !important;
+    margin-bottom: 20px !important;
+
+  }
   .result .info .image img{
     width: 120px;
     height: 150px;
@@ -273,13 +286,18 @@
     font-weight: 600;
     text-transform: uppercase !important;
   }
+  .result .course{
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
   .class
 
   /* login */
-  .login .form{
+  /* .login .form{
     box-shadow: 1px 1px 5px gainsboro;
-    margin-top: 150px !important;
-  }
+    margin-top: 10px !important;
+    width: 100% !important;
+  } */
   .login button{
     font-size: 13px;
     border-radius: 20px;
@@ -290,12 +308,14 @@
   .login .form{
     box-shadow: 1px 1px 5px gainsboro;
     margin-top: 120px !important;
+    width: 90% !important;
   }
 
   /* Admin Login */
   .admin .form{
     box-shadow: 1px 1px 5px gainsboro;
     margin-top: 120px !important;
+    width: 95% !important;
   }
   .admin button{
     font-size: 13px;
@@ -313,13 +333,17 @@
   .addStudent input{
     border: thin solid rgba(128, 128, 128, 0.267) ;
     border-radius: 10px;
+    width: 95% !important;
+    margin: auto !important;
   }
   .addStudent form button{
     border-radius: 20px;
+    /* width: 40% !important; */
   }
   .addStudent .courseForm{
     /* margin-top: ; */
     align-items: center;
+    display: block !important;
   }
   .addStudent .courseForm button{
     margin-top: 25px;

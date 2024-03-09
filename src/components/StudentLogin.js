@@ -35,6 +35,7 @@ function StudentLogin() {
             placeholder='Matric No'
             value={MatricNo}
             onChange={(e) => setMatricNo(e.target.value)}
+            required
             />
             <button type='submit' className='mt-3 px-4 py-1'>Login</button>
           </form>  

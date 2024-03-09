@@ -83,8 +83,8 @@ const AdminDashboard = () => {
                   <th className="col-lg-1">S/N</th>
                   <th className="col-lg-2">Matric No</th>
                   <th className="col-lg-4">Student Name</th>
-                  <th className="col-lg-2">Gender</th>
-                  <th className="col-lg-2">Date of Birth</th>
+                  <th className="col-lg-2 small">Gender</th>
+                  <th className="col-lg-2 small">Date of Birth</th>
                   <th className="col-lg-1"></th>
                   <th className="col-lg-1"></th>
                 </tr>
@@ -95,8 +95,8 @@ const AdminDashboard = () => {
                     <td>{index + 1}</td>
                     <td>{student.matric}</td>
                     <td>{student.name}</td>
-                    <td>{student.gender}</td>
-                    <td>{student.dob}</td>
+                    <td className="small">{student.gender}</td>
+                    <td className="small">{student.dob}</td>
                     <td>
                       <button
                         className=" button rounded px-3"

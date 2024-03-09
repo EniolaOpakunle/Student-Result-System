@@ -17,9 +17,9 @@ function Result(){
             <table className='w-100 '>
                 <thead className=''>
                     <tr className=''>
-                        <th className='col-lg-1'>S/N</th>
-                        <th className='col-lg-2'>Course code</th>
-                        <th className='col-lg-4'>Course Title</th>
+                        <th className='col-lg-1 col-sm-1'>S/N</th>
+                        <th className='col-lg-2 col-sm-2'>Course code</th>
+                        <th className='col-lg-4 col-sm-4'>Course Title</th>
                         <th className='col-lg-2'>Score</th>
                         <th className='col-lg-2'>Grade</th>
                     </tr>
@@ -31,7 +31,7 @@ function Result(){
                             <td className='code'>{course.code}</td>
                             <td>{course.name}</td>
                             <td>{course.score}</td>
-                            <td>78</td>
+                            <td>{course.grade}</td>
                             {/* <td>{course.grade}</td> */}
 
                         </tr>

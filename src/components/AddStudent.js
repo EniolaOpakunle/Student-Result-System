@@ -87,7 +87,7 @@ const AddStudent = ({object}) => {
       <div className='header'>
         <h4 className='text-center'>Student Registration form</h4>
       </div>
-      <div className='mt-5'>
+      <div className='mt-5 details'>
         <form onSubmit={handleSubmit} className='row justify-content-center'>
             <div className='col-lg-6 mt-2'>
                 <label className='form-label'>Name</label>
