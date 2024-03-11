@@ -58,6 +58,19 @@
 }
 .result .header{
   justify-content: space-between !important;
+  /* align-items: center; */
+}
+.result .header .d-flex{
+  align-items: center !important;
+}
+.result .header button{
+  background-color: white;
+  color: black;
+  border: thin solid black;
+  margin-top: -10px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 3px 15px 3px 15px;
 }
 
 .result table tr td{
@@ -128,6 +141,18 @@
 .login .form{
   box-shadow: 1px 1px 5px gainsboro;
   margin-top: 120px !important;
+}
+.login .header{
+  justify-content: space-between;
+}
+.login .header button{
+  background-color: white;
+  color: black;
+  border: thin solid black;
+  margin-top: -10px;
+  /* margin-left: 10px; */
+  border-radius: 10px;
+  padding: 2px 5px 2px 5px;
 }
 
 /* Admin Login */
@@ -233,9 +258,14 @@
   /* Result */
   .result{
     font-size: 13px;
+    padding: 5px !important;
   }
   .result .header{
+    margin-top: 10px;
     justify-content: space-between !important;
+  }
+  .result .table{
+    width: 100% !important;
   }
 
   .result table tr td{

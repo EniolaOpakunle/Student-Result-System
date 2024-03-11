@@ -2,11 +2,13 @@ import React from 'react'
 import { useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import contactImage from '../images/contact.png';
+import { useNavigate } from 'react-router-dom';
 
 function Result(){
     const [student, setstudent] = useState({})
     const [scoredCreditUnits, setscoredCreditUnits] = useState('')
     const [cgpa, setcgpa] = useState('')
+    const naviagte = useNavigate();
         const {state} = useLocation()
         const calculateTotalCreditUnits = () => {
             const totalCredits = state.courses.reduce((sum, course) => sum + (parseInt(course.credit) *4), 0);
@@ -22,11 +24,17 @@ function Result(){
             // setscoredCreditUnits(totalGradePoints)
             return parseFloat(((totalGradePoints / calculateTotalCreditUnits())*5).toFixed(2));
         }
+        const handleLogOut = () =>{
+            naviagte('/login')
+        }
   return (
     <div className='result container-fluid px-4 py-3'>
         <div className='header d-flex'>
             <h6>Results</h6>
-            <h6 className='title'>{state.name}: <span className=''>{state.matric}</span></h6>
+            <div className='d-flex'>
+                <h6 className='title'>{state.name}: <span className=''>{state.matric}</span></h6>
+                <button onClick={() => handleLogOut()}>log out</button>
+            </div>
         </div>
         <div className='mt-4 result-div'>
             <table className='w-100 '>

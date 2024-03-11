@@ -21,8 +21,11 @@ function StudentLogin() {
   return (
     <div className='login p-4'>
       <div className='header mt-1 d-flex' >
-        <h6>Student Login Portal</h6>
-        <h6>@LAUTECH</h6>
+        <h6>Student Login Portal <span>@Lautech</span></h6>
+        {/* <h6>@LAUTECH</h6> */}
+        <div>
+          <button>Log in as Admin</button>
+        </div>
       </div>
       <div className='w-50 m-auto mt-5 p-5 form'>
         <form onSubmit={handleSubmit}>
@@ -43,6 +46,9 @@ function StudentLogin() {
           <div className='mt-3'>
             <p>Not registered? <a href="/register">Register here</a> </p>
           </div>
+          {/* <div>
+            <p className='text-end'>Log in as <a href="/adminlogin">Admin</a></p>
+          </div> */}
       </div>
     </div>
   )
