@@ -18,13 +18,16 @@ function StudentLogin() {
             setmessage('Wrong matric no or student not registered')
         }
     }
+    const handleAdminLogin = () =>{
+      navigate('/adminlogin')
+    }
   return (
     <div className='login p-4'>
       <div className='header mt-1 d-flex' >
         <h6>Student Login Portal <span>@Lautech</span></h6>
         {/* <h6>@LAUTECH</h6> */}
         <div>
-          <button>Log in as Admin</button>
+          <button onClick={() => handleAdminLogin()}>Log in as Admin</button>
         </div>
       </div>
       <div className='w-50 m-auto mt-5 p-5 form'>
