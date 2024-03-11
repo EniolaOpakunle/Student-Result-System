@@ -5,11 +5,23 @@ import contactImage from '../images/contact.png';
 
 function Result(){
     const [student, setstudent] = useState({})
-    const [intScore, setintScore] = useState()
-    const [totalScore, settotalScore] = useState('')
+    const [scoredCreditUnits, setscoredCreditUnits] = useState('')
     const [cgpa, setcgpa] = useState('')
         const {state} = useLocation()
-
+        const calculateTotalCreditUnits = () => {
+            const totalCredits = state.courses.reduce((sum, course) => sum + (parseInt(course.credit) *4), 0);
+            return (totalCredits)
+        }
+        const calculateTotalScoredCredit =() =>{
+            const totalGradePoints = state.courses.reduce((sum, course) => sum + course.point, 0);
+            return(totalGradePoints)
+        }
+        const calculateCGPA = () => {
+            const totalCredits = state.courses.reduce((sum, course) => sum + course.credit, 0);
+            const totalGradePoints = state.courses.reduce((sum, course) => sum + course.point, 0);
+            // setscoredCreditUnits(totalGradePoints)
+            return parseFloat(((totalGradePoints / calculateTotalCreditUnits())*5).toFixed(2));
+        }
   return (
     <div className='result container-fluid px-4 py-3'>
         <div className='header d-flex'>
@@ -23,8 +35,10 @@ function Result(){
                         <th className='col-lg-1 col-sm-1'>S/N</th>
                         <th className='col-lg-2 col-sm-2'>Course code</th>
                         <th className='col-lg-4 col-sm-4'>Course Title</th>
-                        <th className='col-lg-2'>Score</th>
-                        <th className='col-lg-2'>Grade</th>
+                        <th className='col-lg-1'>Credit Units</th>
+                        <th className='col-lg-1'>Score</th>
+                        <th className='col-lg-1'>Grade</th>
+                        <th className='col-lg-1'>Grade Point</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,17 +47,18 @@ function Result(){
                             <td>{index + 1}</td>
                             <td className='code'>{course.code}</td>
                             <td>{course.name}</td>
+                            <td>{course.credit}</td>
                             <td>{course.score}</td>
                             <td>{course.grade}</td>
-
+                            <td>{course.point}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <tr className='row justify-content-space-between py-3'>
-                <td className='col-lg-4'>Total Course Taken: <span>{state.courses.length}</span></td>
-                <td className='col-lg-4'>CGPA:</td>
-                <td className='col-lg-4'>Total Credit:</td>
+            <tr className='row justify-content-space-between py-3 px-3'>
+                <td className='col-lg-4'>Total Course Taken: <span className='blue'>{state.courses.length}</span></td>
+                <td className='col-lg-4'>CGPA: <span className='blue'> {calculateCGPA()} / 5.0 </span></td>
+                <td className='col-lg-4'>Total Credit: <span className='blue'> {calculateTotalScoredCredit()}/ {calculateTotalCreditUnits()} </span></td>
             </tr>
         </div>
         <div className='row info mt-5 px-2'>

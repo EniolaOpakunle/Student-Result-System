@@ -36,7 +36,9 @@ const AddStudent = ({object}) => {
           name: course.name,
           score: course.score,
           code: course.code,
+          credit: course.credit,
           grade: course.grade,
+          point: course.point,
         })),
       };
   
@@ -65,8 +67,25 @@ const AddStudent = ({object}) => {
     }
   }
 
+  const determineCreditPoint = (grade, credit) => {
+    switch (grade) {
+      case 'A':
+        return 4 * credit;
+      case 'B':
+        return 3 * credit;
+      case 'C':
+        return 2 * credit;
+      case 'D':
+        return 1 * credit;
+      case 'F':
+        return 0;
+      default:
+        return 0;
+    }
+  };
+
   const handleAddCourse = () => {
-    setCourses([...courses, { name: '', score: '', code: '', grade:'' }]);
+    setCourses([...courses, { name: '', score: '', code: '', credit: '', grade:'', point: '' }]);
   };
 
   const handleRemoveCourse = (index) => {
@@ -79,6 +98,7 @@ const AddStudent = ({object}) => {
     const newCourses = [...courses];
     newCourses[index][field] = value;
     newCourses[index].grade = determineGrade(newCourses[index].score)
+    newCourses[index].point = determineCreditPoint(newCourses[index].grade, newCourses[index].credit)
     setCourses(newCourses);
   };
 
@@ -119,6 +139,7 @@ const AddStudent = ({object}) => {
                 placeholder='Department'
                 value={department}
                 onChange={(e) => setdepartment(e.target.value)}
+                required
                 />
             </div>
             <div className='col-lg-5 mt-2'>
@@ -140,6 +161,7 @@ const AddStudent = ({object}) => {
                 placeholder='Faculty'
                 value={faculty}
                 onChange={(e) => setfaculty(e.target.value)}
+                required
                 />
             </div>
             <div className='col-lg-5 mt-2 form-group'>
@@ -185,13 +207,23 @@ const AddStudent = ({object}) => {
                     <input 
                     type="text" 
                     className='form-control'
-                    placeholder='Course Code'
+                    placeholder='Code'
                     value={course.code}
                     onChange={(e) => handleCourseChange(index, 'code', e.target.value)}
                     required
                     />
                 </div>
-                <div className='col-lg-2'>
+                <div className='col-lg-1'>
+                  <label htmlFor="" className='form-label'>Credit unit</label>
+                  <input 
+                  type="number" 
+                  className='form-control'
+                  placeholder='Units'
+                  value={course.credit}
+                  onChange={(e) => handleCourseChange(index, 'credit', e.target.value)}
+                  />
+                </div>
+                <div className='col-lg-1'>
                     <label htmlFor="" className='form-label'>Score</label>
                     <input
                     type="number"
@@ -201,7 +233,7 @@ const AddStudent = ({object}) => {
                     onChange={(e) => handleCourseChange(index, 'score', e.target.value)}
                     />
                 </div>
-                <div className='col-lg-2'>
+                <div className='col-lg-1'>
                     <label htmlFor="" className='form-label'>Grade</label>
                     <input 
                     type="text"
@@ -211,6 +243,15 @@ const AddStudent = ({object}) => {
                     disabled
                     // onChange={() => } 
                     />
+                </div>
+                <div className='col-lg-1'>
+                  <label htmlFor="" className='form-label'>Credit point</label>
+                  <input
+                  type="number"
+                  className='form-control'
+                  value={determineCreditPoint(course.grade ,course.credit)} 
+                  disabled
+                  />
                 </div>
                 <div className='col-lg-3'>
                     <button type="button " className='form-control btn-dark' onClick={() => handleRemoveCourse(index)}>

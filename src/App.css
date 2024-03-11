@@ -72,6 +72,10 @@
   font-size: 13px;
   color: blue;
 }
+.result .blue{
+  color: blue;
+  font-weight: 600;
+}
 .result .info{
   justify-content: space-between;
   text-transform: capitalize;
