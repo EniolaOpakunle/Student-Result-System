@@ -13,11 +13,9 @@ function StudentLogin() {
         let found = storedStudents.find((val, index) => (MatricNo == val.matric))
         if (found){
             navigate('/result', {state: found})
-            console.log(found)
         }
         else{
             setmessage('Wrong matric no or student not registered')
-            // navigate('/result')
         }
     }
   return (
@@ -42,9 +40,9 @@ function StudentLogin() {
           <div className='mt-3'>
             <h6 className='text-danger'>{message}</h6>
           </div>
-          <Routes>
-            <Route path='/result' element= {<Result/>}/>
-          </Routes>
+          <div className='mt-3'>
+            <p>Not registered? <a href="/register">Register here</a> </p>
+          </div>
       </div>
     </div>
   )

@@ -5,13 +5,16 @@ import contactImage from '../images/contact.png';
 
 function Result(){
     const [student, setstudent] = useState({})
+    const [intScore, setintScore] = useState()
+    const [totalScore, settotalScore] = useState('')
+    const [cgpa, setcgpa] = useState('')
         const {state} = useLocation()
+
   return (
     <div className='result container-fluid px-4 py-3'>
         <div className='header d-flex'>
             <h6>Results</h6>
             <h6 className='title'>{state.name}: <span className=''>{state.matric}</span></h6>
-            {/* <p>Matric Number: {state.matric}</p> */}
         </div>
         <div className='mt-4 result-div'>
             <table className='w-100 '>
@@ -32,7 +35,6 @@ function Result(){
                             <td>{course.name}</td>
                             <td>{course.score}</td>
                             <td>{course.grade}</td>
-                            {/* <td>{course.grade}</td> */}
 
                         </tr>
                     ))}
